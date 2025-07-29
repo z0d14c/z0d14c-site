@@ -1,0 +1,33 @@
+---
+import Layout from '@layouts/Default.astro';
+import SummaryCard from '@components/generic/SummaryCard.astro';
+import placeholder from '@assets/astro.jpeg';
+
+const projects = [
+  {
+    title: 'Example Project One',
+    description: 'Short blurb about this software project.',
+    img: placeholder,
+  },
+  {
+    title: 'Example Project Two',
+    description: 'Another blurb describing a different project.',
+    img: placeholder,
+  },
+];
+---
+
+<Layout title='Projects' pageTitle='Software Projects' description='Software projects by Thomas Grice'>
+  <main class='bg-purple p-6'>
+    <h2 class='text-3xl md:text-5xl dm-serif mb-4'>Software Projects</h2>
+    <ul class='grid md:grid-cols-2 gap-8'>
+      {
+        projects.map((proj) => (
+          <li>
+            <SummaryCard title={proj.title} imgSrc={proj.img} imgAlt={proj.title} description={proj.description} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
