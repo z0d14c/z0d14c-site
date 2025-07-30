@@ -5,24 +5,26 @@ interface Props {
 
 const navigationItems = [
   { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog/' },
   { name: 'Projects', url: '/projects/' },
   { name: 'Resume', url: '/resume/' },
-  { name: 'Contact', url: '/contact/' },
 ];
 
 const socialIcons = [
   {
     name: 'GitHub',
-    url: 'https://github.com/eliancodes/brutal',
+    url: 'https://github.com/z0d14c',
     icon: 'i-uil-github',
   },
   {
     name: 'Twitter',
-    url: 'https://www.twitter.com/eliancodes',
+    url: 'https://x.com/xurbanxcowboyx',
     icon: 'i-uil-twitter',
   },
-  { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
+  {
+    name: 'Pocket Casts',
+    url: 'https://pocketcasts.com/podcasts/c5f57c50-4b30-013e-59f9-0eb76ff9618b',
+    icon: 'i-logos:pocketcasts-icon',
+  },
 ];
 
 const { pageTitle } = Astro.props;
@@ -56,7 +58,7 @@ const { pageTitle } = Astro.props;
               href={item.url}
               class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
               target='_blank'
-              title={`'See @ElianCodes on ${item.name}`}
+              title={`Go to ${item.name}`}
             >
               <div class:list={[item.icon, 'w-6 h-6']} />
             </a>
@@ -68,10 +70,8 @@ const { pageTitle } = Astro.props;
   <nav class='md:hidden flex'>
     <h2 class='hidden'>Mobile Navigation</h2>
     <ul>
-      <li><a href='/blog/'>Blog</a></li>
       <li><a href='/projects/'>Projects</a></li>
       <li><a href='/resume/'>Resume</a></li>
-      <li><a href='/contact/'>Contact</a></li>
     </ul>
   </nav>
 </header>
