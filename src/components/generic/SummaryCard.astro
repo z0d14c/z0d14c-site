@@ -1,15 +1,25 @@
 ---
 import { Card } from '@eliancodes/brutal-ui';
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro:assets';
 
 interface Props {
   title: string;
   imgSrc: ImageMetadata;
   imgAlt: string;
   description: string;
+  href?: string;
+  linkText?: string;
 }
 
-const { title, imgAlt, imgSrc, description } = Astro.props;
+const {
+  title,
+  imgAlt,
+  imgSrc,
+  description,
+  href,
+  linkText = 'Learn more \u2192',
+} = Astro.props;
 ---
 
 <Card color='white'>
@@ -25,4 +35,11 @@ const { title, imgAlt, imgSrc, description } = Astro.props;
   </div>
   <p class='poppins'>{description}</p>
   <slot />
+  {href && (
+    <div class='flex justify-end mt-4'>
+      <a href={href} class='border-2 border-black px-4 py-2 bg-white card-shadow'>
+        {linkText}
+      </a>
+    </div>
+  )}
 </Card>

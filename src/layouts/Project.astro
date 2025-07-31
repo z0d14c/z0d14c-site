@@ -1,0 +1,38 @@
+---
+import Layout from './Default.astro';
+import ImageCarousel from '@components/project/ImageCarousel.astro';
+import type { ImageMetadata } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+  images?: ImageMetadata[];
+  mainClass?: string;
+  href?: string;
+  linkText?: string;
+}
+
+const {
+  title,
+  description,
+  images = [],
+  mainClass = 'bg-blue p-6',
+  href,
+  linkText = 'View site \u2192',
+} = Astro.props;
+---
+
+<Layout title={title} pageTitle={title} description={description}>
+  <main class={mainClass}>
+    <h2 class='text-3xl md:text-5xl dm-serif mb-4'>{title}</h2>
+    {href && (
+      <div class='my-4'>
+        <a href={href} class='border-2 border-black px-4 py-2 bg-white card-shadow'>
+          {linkText}
+        </a>
+      </div>
+    )}
+    {images.length > 0 && <ImageCarousel images={images} />}
+    <slot />
+  </main>
+</Layout>
