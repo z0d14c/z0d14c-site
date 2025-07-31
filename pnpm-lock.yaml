@@ -14,6 +14,9 @@ dependencies:
   '@eliancodes/brutal-ui':
     specifier: ^0.2.3
     version: 0.2.3
+  '@splidejs/splide':
+    specifier: ^4.1.4
+    version: 4.1.4
   '@unocss/astro':
     specifier: ^0.57.7
     version: 0.57.7(vite@5.4.10)
@@ -1850,6 +1853,10 @@ packages:
     dependencies:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
+    dev: false
+
+  /@splidejs/splide@4.1.4:
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
     dev: false
 
   /@swc/helpers@0.5.17:
