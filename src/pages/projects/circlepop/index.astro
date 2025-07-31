@@ -1,0 +1,17 @@
+---
+import ProjectLayout from '@layouts/Project.astro';
+import placeholder from '@assets/astro.jpeg';
+
+const images = [placeholder];
+---
+
+<ProjectLayout
+  title='Circlepop'
+  description='About Circlepop'
+  images={images}
+  mainClass='bg-blue p-6'
+  href='https://example.com'
+  linkText='Visit site \u2192'
+>
+  <p class='poppins mt-4'>This is a stub page for the Circlepop project. More information will be added later.</p>
+</ProjectLayout>
