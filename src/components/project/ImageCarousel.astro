@@ -24,7 +24,7 @@ const { images } = Astro.props;
 </div>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  const initCarousel = () => {
     const carousel = document.currentScript?.parentElement;
     if (!carousel) return;
     const imgs = carousel.querySelectorAll('.carousel-img');
@@ -47,5 +47,11 @@ const { images } = Astro.props;
       current = (current + 1) % imgs.length;
       show();
     });
-  });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
 </script>
