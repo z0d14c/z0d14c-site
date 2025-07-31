@@ -54,19 +54,9 @@ export default defineConfig({
 });
 ```
 
-### RSS
-
-The RSS feed is automatically generated from the Markdown files in the `src/content/blog` folder. You can ofcourse completely change this to your own needs.
-
-The RSS will output to `https://example.com/feed.xml` by default. You can change this, by renaming `src/pages/feed.xml.js`.
-
 ### Image
 
 ## Components
-
-### `components/blog/`
-
-This directory contains all components for the blog.
 
 ### `components/errors/`
 
