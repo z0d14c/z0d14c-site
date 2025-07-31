@@ -2,12 +2,11 @@ import { Resvg, type ResvgRenderOptions } from '@resvg/resvg-js';
 import type { APIRoute } from 'astro';
 import satori from 'satori';
 import { html as toReactElement } from 'satori-html';
+import fs from 'fs/promises';
 
-const fontFile = await fetch(
-  'https://og-playground.vercel.app/inter-latin-ext-700-normal.woff'
+const fontData = await fs.readFile(
+  new URL('../../../../../public/fonts/poppins.ttf', import.meta.url)
 );
-
-const fontData: ArrayBuffer = await fontFile.arrayBuffer();
 
 const height = 630;
 const width = 1200;
