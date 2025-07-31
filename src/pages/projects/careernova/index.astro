@@ -11,8 +11,13 @@ const images = [careernova1, careernova2];
   description='About Careernova'
   images={images}
   mainClass='bg-blue p-6'
-  href='https://example.com'
+  href=`https://careernova.com`
   linkText='Visit site \u2192'
 >
-  <p class='poppins mt-4'>This is a stub page for the Careernova project. More information will be added later.</p>
+  <p class='poppins mt-4'>Careernova is a platform for job seekers to tailor their resume to a given job description.</p>
+  <p class='poppins mt-4'>I built this project a few months after ChatGPT was released looking for excused to play around with LLMs.</p>
+  <p class='poppins mt-4'>I was interested in combining the feature of critiquing/tailoring resumes along with writing cover letters.</p>
+  <p class='poppins mt-4'>One challenge was dealing with the non-determinism of LLMs. This was early on before best practices had been established.</p>
+  <p class='poppins mt-4'>I used one/few-shot prompting to reasonable effect. The next thing I would have added is probably a retry mechanism, although I never got around to it.</p>
+  <p class='poppins mt-4'>The UI also had some interesting details, using {`<mark>`}s to highlight the critique and suggestions based on LLM output.</p>
 </ProjectLayout>
