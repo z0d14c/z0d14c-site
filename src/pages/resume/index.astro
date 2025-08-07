@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Default.astro";
+import ResumeToggle from "@components/resume/ResumeToggle.tsx";
 
 interface Bullet {
   text: string;
@@ -189,20 +190,5 @@ const abridged = sections.map((section) => ({
       }
     </section>
   </main>
-  <script>
-    const btn = document.getElementById("resumeToggle");
-    const abr = document.getElementById("abridged");
-    const det = document.getElementById("detailed");
-    btn?.addEventListener("click", () => {
-      if (det.style.display === "none") {
-        det.style.display = "block";
-        abr.style.display = "none";
-        btn.textContent = "Show abridged resume";
-      } else {
-        det.style.display = "none";
-        abr.style.display = "block";
-        btn.textContent = "Show detailed resume";
-      }
-    });
-  </script>
+  <ResumeToggle client:only="react" />
 </Layout>
