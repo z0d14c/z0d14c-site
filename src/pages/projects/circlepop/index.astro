@@ -6,7 +6,11 @@ import circlepop2 from "@assets/projects/circlepop2.png";
 const images = [circlepop1, circlepop2];
 
 const paragraphs = [
-  "This is a stub page for the Circlepop project. More information will be added later.",
+  "<strong>Circlepop</strong> is a quick side project exploring maps + open data to visualize urbanist data using <a href='https://neon.tech/'>Neon</a> for Postgres hosting and Vercel for the Next.js frontend.",
+  "Select a radius and a point on the map (currently Germany-only for faster processing) to see the population within that circle as well as the number of train, tram, and bus stops.",
+  "The main challenges included downloading raster data from the <a href='https://ghsl.jrc.ec.europa.eu/ghs_pop2019.php'>Global Human Settlement Layer</a> at 1 km resolution, loading the <code>.tiff</code> population raster into PostGIS, transforming it to centroid rasters for Germany, and storing it. I used a similar approach with OSM data for transit stops.",
+  "At a glance, the data is surprisingly accurate, though transit stop coverage likely has gaps in some regions. Improvements could include expanding coverage globally, increasing resolution in dense urban areas, adding caching strategies for performance, and visualizing transit stops on the map instead of only displaying counts.",
+  "Credit to <a href='https://tomforth.co.uk/'>Tom Forth</a> for the inspiration—our approaches diverged (PostGIS here vs SQLite in his version).",
 ];
 ---
 
@@ -15,7 +19,7 @@ const paragraphs = [
   description="About Circlepop"
   images={images}
   mainClass="bg-blue"
-  siteHref="https://example.com"
+  siteHref="https://circlepop.vercel.app/map"
   repoHref="https://github.com/z0d14c/circlepop"
   paragraphs={paragraphs}
 />
