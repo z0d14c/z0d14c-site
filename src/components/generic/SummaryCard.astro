@@ -24,13 +24,13 @@ const {
 
 <Card color='white'>
   <h3 class='poppins text-lg md:text-xl'>{title}</h3>
-  <div class='rounded-lg border-3 border-black my-4 h-56'>
+  <div class='rounded-lg border-3 border-black my-4'>
     <Image
       src={imgSrc}
       alt={imgAlt}
       width={800}
       height={400}
-      class='rounded h-full w-full object-cover'
+      class='rounded w-full h-auto max-h-56 object-contain mx-auto'
     />
   </div>
   <p class='poppins'>{description}</p>
