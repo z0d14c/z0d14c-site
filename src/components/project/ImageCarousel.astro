@@ -8,29 +8,34 @@ interface Props {
 }
 
 const { images } = Astro.props;
+const id = `splide-${Math.random().toString(36).slice(2, 9)}`;
 ---
 
-<div class='splide'>
+<div id={id} class='splide'>
   <div class='splide__track'>
     <ul class='splide__list'>
       {images.map((img) => (
         <li class='splide__slide'>
-          <Image src={img} alt='' width={800} height={400} class='rounded border-2 border-black w-full h-64 object-cover' />
+          <Image
+            src={img}
+            alt=''
+            width={img.width}
+            height={img.height}
+            class='rounded border-2 border-black max-w-full h-auto max-h-96 object-contain mx-auto'
+          />
         </li>
       ))}
     </ul>
   </div>
 </div>
 
-<script define:vars>
+<script define:vars={{ id }}>
   import Splide from '@splidejs/splide';
 
   const initCarousel = () => {
-    const root = document.currentScript?.parentElement;
-    if (!root) return;
-    const splideEl = root.querySelector('.splide');
+    const splideEl = document.getElementById(id);
     if (!splideEl) return;
-    new Splide(splideEl, { type: 'loop' }).mount();
+    new Splide(splideEl, { type: 'loop', autoplay: true }).mount();
   };
 
   if (document.readyState === 'loading') {

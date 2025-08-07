@@ -1,5 +1,11 @@
 ---
 import Layout from '@layouts/Default.astro';
+import { resume } from '@data/resume';
+
+const abridged = resume.map((section) => ({
+  title: section.title,
+  lines: section.lines.filter((l) => l.critical),
+}));
 ---
 
 <Layout title='Resume' pageTitle='Resume' description='Thomas Augustus Grice Resume'>
@@ -10,12 +16,28 @@ import Layout from '@layouts/Default.astro';
       <button id='resumeToggle' class='border-2 border-black px-4 py-2 bg-white card-shadow'>Show detailed resume</button>
     </div>
     <section id='abridged'>
-      <h3 class='text-2xl dm-serif'>Abridged</h3>
-      <p class='poppins'>This section contains a short one-page style overview.</p>
+      {abridged.map((section) => (
+        <div class='mb-4'>
+          <h3 class='text-2xl dm-serif'>{section.title}</h3>
+          <ul class='poppins list-disc ml-4'>
+            {section.lines.map((line) => (
+              <li>{line.text}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
     <section id='detailed' style='display:none;'>
-      <h3 class='text-2xl dm-serif'>Detailed</h3>
-      <p class='poppins'>This section contains the extended resume with more information.</p>
+      {resume.map((section) => (
+        <div class='mb-4'>
+          <h3 class='text-2xl dm-serif'>{section.title}</h3>
+          <ul class='poppins list-disc ml-4'>
+            {section.lines.map((line) => (
+              <li>{line.text}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
   </main>
   <script>

@@ -1,0 +1,87 @@
+export interface ResumeLine {
+  text: string;
+  critical?: boolean;
+}
+
+export interface ResumeSection {
+  title: string;
+  lines: ResumeLine[];
+}
+
+export const resume: ResumeSection[] = [
+  {
+    title: 'Experience',
+    lines: [
+      { text: 'Jan 2023 - Present', critical: true },
+      { text: 'Freelance - Freelance UI Engineer', critical: true },
+      { text: 'Various', critical: true },
+      {
+        text: 'Assist various companies with full-stack engineering in service of creating more powerful and usable experiences for their customers. Focused on Typescript, JS, Node- and React-based technologies, while also utilizing other languages like Ruby as needed.',
+      },
+      { text: 'Nov 2018 - June 2022', critical: true },
+      { text: 'Amazon Web Services/Amazon - Frontend Engineer II', critical: true },
+      { text: 'Amazon Web Services (Team: Honeycode / low code platform)' },
+      {
+        text: 'Crafted complex, composable UI components such as ExpressionEditor to enable users to add conditional logic to their applications without writing code; rewrote SlateJS-based text editor widget to support new features such as copy/paste and overall stability, add types',
+      },
+      {
+        text: 'Supervised and mentored junior engineers to write metrics, alarms, and dashboards code, resulting in clear visibility into frontend app performance before and after product launch. Successfully instrumented all major features with associated metrics and alarms achieving visibility into performance used in daily standups and severe event analysis',
+      },
+      {
+        text: 'Designed and implemented frontend logging and analytics middleware to log Redux actions and parameters using allowlist/blocklist pattern, and influenced the rest of the organization to adopt it. Consequently, debugging high severity events became significantly easier while enabling teams to protect themselves from sensitive data leaks.',
+      },
+      {
+        text: 'Led improvements in keyboard usability and overall accessibility for the product by adding hotkey support and ensuring that every component, including Modals, Tooltips, SkipTo, and the application as a whole was able to be used solely with a keyboard. Additionally, I integrated the component library with an a11y auditor to ensure WCAG A compliance for all components.',
+      },
+      { text: 'Promoted from FEE1 -> FEE2' },
+      { text: 'Amazon (Team: Imperium UI)' },
+      {
+        text: 'Designed Figma wireframes, conducted user surveys, and created the technical design for Imperium UI. Successfully transitioned Network Device Automation from a CLI to a UI-based system, impacting thousands of Amazon employees.',
+      },
+      {
+        text: 'Directed the implementation of Imperium UI MVP from scratch and spearheaded key aspects such as device details and overall frontend architecture.',
+      },
+      {
+        text: 'I was heavily involved in hiring and training team members. I participated in ~40 interview loops and mentored team members and interns, including designing their project assignments and onboarding them to our software architectures and systems.',
+      },
+      { text: 'Sep 2017 - Oct 2018', critical: true },
+      { text: 'Igneous Systems - Member of Technical Staff 2 / UX Team Lead', critical: true },
+      {
+        text: 'Implemented end-to-end testing framework (Cypress) to increase the resilience of the frontend product, ensuring higher quality and better user experience.',
+      },
+      { text: 'Delivered redesigned customer dashboard' },
+      {
+        text: 'Led quality increase efforts for UX team, adopting Typescript, linting, codifying standards',
+      },
+      { text: 'Promoted from MTS 1 to MTS 2' },
+      { text: 'Aug 2016 - Jul 2017', critical: true },
+      { text: 'MicaSense- Software Engineer', critical: true },
+      {
+        text: 'Migrated legacy Backbone.js front-end to a React-Redux stack in just a few months',
+      },
+      {
+        text: 'Integrate React-based application with Mapbox-GL to display map graphics/UI integrated with MicaSense tile data for users',
+      },
+      { text: '(+ Internships at Estech Systems and Credera)' },
+    ],
+  },
+  {
+    title: 'Projects',
+    lines: [
+      { text: 'Careernova.pro - Automated Cover Letter Generator', critical: true },
+      {
+        text: 'Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.',
+      },
+    ],
+  },
+  {
+    title: 'Education',
+    lines: [
+      { text: 'University of Texas at Dallas - B.S. Software Engineering', critical: true },
+      { text: 'focus: Human-Computer Interaction' },
+      {
+        text: 'Technical Officer of UX Club, User Researcher in FIVE Lab with Dr. Ryan McMahan',
+      },
+    ],
+  },
+];
