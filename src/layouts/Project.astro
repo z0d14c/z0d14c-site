@@ -12,6 +12,7 @@ interface Props {
   siteLinkText?: string;
   repoHref?: string;
   repoLinkText?: string;
+  paragraphs?: string[];
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   siteLinkText = "Visit site \u2192",
   repoHref,
   repoLinkText = "View source \u2192",
+  paragraphs = [],
 } = Astro.props;
 ---
 
@@ -52,6 +54,19 @@ const {
       )
     }
     {images.length > 0 && <ImageCarousel images={images} />}
+    {
+      paragraphs.length > 0 && (
+        <section class="mx-auto max-w-6xl px-6 py-10 md:py-14">
+          <article class="mx-auto mt-10 max-w-prose rounded-2xl bg-white/70 px-6 py-6 leading-relaxed shadow-sm backdrop-blur-sm">
+            <div class="prose prose-neutral lg:prose-lg">
+              {paragraphs.map((p) => (
+                <p set:html={p} />
+              ))}
+            </div>
+          </article>
+        </section>
+      )
+    }
     <slot />
   </main>
 </Layout>
