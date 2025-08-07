@@ -1,7 +1,7 @@
 ---
-import { Card } from '@eliancodes/brutal-ui';
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro:assets';
+import { Card } from "@eliancodes/brutal-ui";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro:assets";
 
 interface Props {
   title: string;
@@ -18,28 +18,33 @@ const {
   imgSrc,
   description,
   href,
-  linkText = 'Learn more \u2192',
+  linkText = "Learn more \u2192",
 } = Astro.props;
 ---
 
-<Card color='white'>
-  <h3 class='poppins text-lg md:text-xl'>{title}</h3>
-  <div class='rounded-lg border-3 border-black my-4 h-56'>
+<Card color="white">
+  <h3 class="poppins text-lg md:text-xl">{title}</h3>
+  <div class="rounded-lg border-3 border-black my-4">
     <Image
       src={imgSrc}
       alt={imgAlt}
       width={800}
       height={400}
-      class='rounded h-full w-full object-cover'
+      class="rounded w-full h-auto max-h-96 object-contain mx-auto"
     />
   </div>
-  <p class='poppins'>{description}</p>
+  <p class="poppins">{description}</p>
   <slot />
-  {href && (
-    <div class='flex justify-end mt-4'>
-      <a href={href} class='border-2 border-black px-4 py-2 bg-white card-shadow'>
-        {linkText}
-      </a>
-    </div>
-  )}
+  {
+    href && (
+      <div class="flex justify-end mt-4">
+        <a
+          href={href}
+          class="border-2 border-black px-4 py-2 bg-white card-shadow"
+        >
+          {linkText}
+        </a>
+      </div>
+    )
+  }
 </Card>
