@@ -4,18 +4,18 @@ import circlepop1 from "@assets/projects/circlepop1.png";
 import circlepop2 from "@assets/projects/circlepop2.png";
 
 const images = [circlepop1, circlepop2];
+
+const paragraphs = [
+  "This is a stub page for the Circlepop project. More information will be added later.",
+];
 ---
 
 <ProjectLayout
   title="Circlepop"
   description="About Circlepop"
   images={images}
-  mainClass="bg-blue p-6"
+  mainClass="bg-blue"
   siteHref="https://example.com"
   repoHref="https://github.com/z0d14c/circlepop"
->
-  <p class="poppins mt-4">
-    This is a stub page for the Circlepop project. More information will be
-    added later.
-  </p>
-</ProjectLayout>
+  paragraphs={paragraphs}
+/>
