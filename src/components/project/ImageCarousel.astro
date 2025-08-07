@@ -10,27 +10,31 @@ interface Props {
 const { images } = Astro.props;
 ---
 
-<div class='splide'>
+<div class='splide max-w-full md:max-w-3xl mx-auto'>
   <div class='splide__track'>
     <ul class='splide__list'>
       {images.map((img) => (
         <li class='splide__slide'>
-          <Image src={img} alt='' width={800} height={400} class='rounded border-2 border-black w-full h-64 object-cover' />
+          <Image
+            src={img}
+            alt=''
+            width={800}
+            height={400}
+            class='rounded border-2 border-black w-full h-auto max-h-96 object-contain mx-auto'
+          />
         </li>
       ))}
     </ul>
   </div>
 </div>
 
-<script define:vars>
+<script>
   import Splide from '@splidejs/splide';
 
   const initCarousel = () => {
-    const root = document.currentScript?.parentElement;
-    if (!root) return;
-    const splideEl = root.querySelector('.splide');
-    if (!splideEl) return;
-    new Splide(splideEl, { type: 'loop' }).mount();
+    document.querySelectorAll('.splide').forEach((el) => {
+      new Splide(el, { type: 'loop', autoplay: true }).mount();
+    });
   };
 
   if (document.readyState === 'loading') {
