@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Default.astro";
+import ResumeToggle from "@components/resume/ResumeToggle.tsx";
 
 interface Bullet {
   text: string;
@@ -132,77 +133,9 @@ const abridged = sections.map((section) => ({
   pageTitle="Resume"
   description="Thomas Augustus Grice Resume"
 >
-  <main class="bg-yellow p-6">
-    <h2 class="text-3xl md:text-5xl dm-serif">Resume</h2>
-    <p class="poppins mt-2">
-      Below you can switch between a short overview and a detailed resume.
-    </p>
-    <div class="my-4">
-      <button
-        id="resumeToggle"
-        class="border-2 border-black px-4 py-2 bg-white card-shadow"
-        >Show detailed resume</button
-      >
-    </div>
-    <section id="abridged">
-      <h3 class="text-2xl dm-serif">Abridged</h3>
-      {
-        abridged.map((section) => (
-          <div class="mt-4">
-            <h4 class="text-xl dm-serif">{section.title}</h4>
-            {section.entries.map((entry) => (
-              <div class="mt-2">
-                <h5 class="poppins font-semibold">{entry.title}</h5>
-                {entry.bullets.length > 0 && (
-                  <ul class="list-disc pl-4">
-                    {entry.bullets.map((b) => (
-                      <li class="poppins">{b.text}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-        ))
-      }
-    </section>
-    <section id="detailed" style="display:none;">
-      <h3 class="text-2xl dm-serif">Detailed</h3>
-      {
-        sections.map((section) => (
-          <div class="mt-4">
-            <h4 class="text-xl dm-serif">{section.title}</h4>
-            {section.entries.map((entry) => (
-              <div class="mt-2">
-                <h5 class="poppins font-semibold">{entry.title}</h5>
-                {entry.bullets.length > 0 && (
-                  <ul class="list-disc pl-4">
-                    {entry.bullets.map((b) => (
-                      <li class="poppins">{b.text}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-        ))
-      }
-    </section>
-  </main>
-  <script>
-    const btn = document.getElementById("resumeToggle");
-    const abr = document.getElementById("abridged");
-    const det = document.getElementById("detailed");
-    btn?.addEventListener("click", () => {
-      if (det.style.display === "none") {
-        det.style.display = "block";
-        abr.style.display = "none";
-        btn.textContent = "Show abridged resume";
-      } else {
-        det.style.display = "none";
-        abr.style.display = "block";
-        btn.textContent = "Show detailed resume";
-      }
-    });
-  </script>
+  <ResumeToggle
+    sections={sections}
+    abridged={abridged}
+    client:only="react"
+  />
 </Layout>
