@@ -1,106 +1,118 @@
 ---
-import Layout from '@layouts/Default.astro';
+import Layout from "@layouts/Default.astro";
 
-interface Line {
+interface Bullet {
   text: string;
   critical?: boolean;
 }
 
+interface Entry {
+  title: string;
+  bullets: Bullet[];
+}
+
 interface Section {
   title: string;
-  lines: Line[];
+  entries: Entry[];
 }
 
 const sections: Section[] = [
   {
-    title: 'Experience',
-    lines: [
-      { text: 'Jan 2023 - Present', critical: true },
-      { text: 'Freelance - Freelance UI Engineer', critical: true },
-      { text: 'Various', critical: true },
+    title: "Experience",
+    entries: [
       {
-        text:
-          'Assist various companies with full-stack engineering in service of creating more powerful and usable experiences for their customers. Focused on Typescript, JS, Node- and React-based technologies, while also utilizing other languages like Ruby as needed.',
-      },
-      { text: 'Nov 2018 - June 2022', critical: true },
-      { text: 'Amazon Web Services/Amazon - Frontend Engineer II', critical: true },
-      { text: 'Amazon Web Services (Team: Honeycode / low code platform)', critical: true },
-      {
-        text:
-          'Crafted complex, composable UI components such as ExpressionEditor to enable users to add conditional logic to their applications without writing code; rewrote SlateJS-based text editor widget to support new features such as copy/paste and overall stability, add types',
+        title: "Freelance UI Engineer – Various (Jan 2023 - Present)",
+        bullets: [
+          {
+            text: "Assist various companies with full-stack engineering in service of creating more powerful and usable experiences for their customers. Focused on Typescript, JS, Node- and React-based technologies, while also utilizing other languages like Ruby as needed.",
+            critical: true,
+          },
+        ],
       },
       {
-        text:
-          'Supervised and mentored junior engineers to write metrics, alarms, and dashboards code, resulting in clear visibility into frontend app performance before and after product launch. Successfully instrumented all major features with associated metrics and alarms achieving visibility into performance used in daily standups and severe event analysis',
+        title:
+          "Frontend Engineer II – Amazon Web Services (Nov 2018 - Jun 2022)",
+        bullets: [
+          {
+            text: "Crafted complex, composable UI components such as ExpressionEditor to enable users to add conditional logic to their applications without writing code; rewrote SlateJS-based text editor widget to support new features such as copy/paste and overall stability, add types",
+            critical: true,
+          },
+          {
+            text: "Supervised and mentored junior engineers to write metrics, alarms, and dashboards code, resulting in clear visibility into frontend app performance before and after product launch. Successfully instrumented all major features with associated metrics and alarms achieving visibility into performance used in daily standups and severe event analysis",
+          },
+          {
+            text: "Designed and implemented frontend logging and analytics middleware to log Redux actions and parameters using allowlist/blocklist pattern, and influenced the rest of the organization to adopt it. Consequently, debugging high severity events became significantly easier while enabling teams to protect themselves from sensitive data leaks.",
+          },
+          {
+            text: "Led improvements in keyboard usability and overall accessibility for the product by adding hotkey support and ensuring that every component, including Modals, Tooltips, SkipTo, and the application as a whole was able to be used solely with a keyboard. Additionally, I integrated the component library with an a11y auditor to ensure WCAG A compliance for all components.",
+          },
+          { text: "Promoted from FEE1 -> FEE2" },
+          {
+            text: "Designed Figma wireframes, conducted user surveys, and created the technical design for Imperium UI. Successfully transitioned Network Device Automation from a CLI to a UI-based system, impacting thousands of Amazon employees.",
+          },
+          {
+            text: "Directed the implementation of Imperium UI MVP from scratch and spearheaded key aspects such as device details and overall frontend architecture.",
+          },
+          {
+            text: "Heavily involved in hiring and training team members, participating in ~40 interview loops and mentoring team members and interns, including designing their project assignments and onboarding them to our software architectures and systems.",
+          },
+        ],
       },
       {
-        text:
-          'Designed and implemented frontend logging and analytics middleware to log Redux actions and parameters using allowlist/blocklist pattern, and influenced the rest of the organization to adopt it. Consequently, debugging high severity events became significantly easier while enabling teams to protect themselves from sensitive data leaks.',
+        title:
+          "Member of Technical Staff 2 / UX Team Lead – Igneous Systems (Sep 2017 - Oct 2018)",
+        bullets: [
+          {
+            text: "Implemented end-to-end testing framework (Cypress) to increase the resilience of the frontend product, ensuring higher quality and better user experience.",
+            critical: true,
+          },
+          { text: "Delivered redesigned customer dashboard" },
+          {
+            text: "Led quality increase efforts for UX team, adopting Typescript, linting, codifying standards",
+          },
+          { text: "Promoted from MTS 1 to MTS 2" },
+        ],
       },
       {
-        text:
-          'Led improvements in keyboard usability and overall accessibility for the product by adding hotkey support and ensuring that every component, including Modals, Tooltips, SkipTo, and the application as a whole was able to be used solely with a keyboard. Additionally, I integrated the component library with an a11y auditor to ensure WCAG A compliance for all components.',
-      },
-      { text: 'Promoted from FEE1 -> FEE2' },
-      { text: 'Amazon (Team: Imperium UI)', critical: true },
-      {
-        text:
-          'Designed Figma wireframes, conducted user surveys, and created the technical design for Imperium UI. Successfully transitioned Network Device Automation from a CLI to a UI-based system, impacting thousands of Amazon employees.',
-      },
-      {
-        text:
-          'Directed the implementation of Imperium UI MVP from scratch and spearheaded key aspects such as device details and overall frontend architecture.',
-      },
-      {
-        text:
-          'I was heavily involved in hiring and training team members. I participated in ~40 interview loops and mentored team members and interns, including designing their project assignments and onboarding them to our software architectures and systems.',
-      },
-      { text: 'Sep 2017 - Oct 2018', critical: true },
-      { text: 'Igneous Systems - Member of Technical Staff 2 / UX Team Lead', critical: true },
-      {
-        text:
-          'Implemented end-to-end testing framework (Cypress) to increase the resilience of the frontend product, ensuring higher quality and better user experience.',
-      },
-      { text: 'Delivered redesigned customer dashboard' },
-      {
-        text:
-          'Led quality increase efforts for UX team, adopting Typescript, linting, codifying standards',
-      },
-      { text: 'Promoted from MTS 1 to MTS 2' },
-      { text: 'Aug 2016 - Jul 2017', critical: true },
-      { text: 'MicaSense- Software Engineer', critical: true },
-      {
-        text:
-          'Migrated legacy Backbone.js front-end to a React-Redux stack in just a few months',
-      },
-      {
-        text:
-          'Integrate React-based application with Mapbox-GL to display map graphics/UI integrated with MicaSense tile data for users',
-      },
-      { text: '(+ Internships at Estech Systems and Credera)' },
-    ],
-  },
-  {
-    title: 'Projects',
-    lines: [
-      { text: 'Careernova.pro - Automated Cover Letter Generator', critical: true },
-      {
-        text:
-          'Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.',
+        title: "Software Engineer – MicaSense (Aug 2016 - Jul 2017)",
+        bullets: [
+          {
+            text: "Migrated legacy Backbone.js front-end to a React-Redux stack in just a few months",
+            critical: true,
+          },
+          {
+            text: "Integrate React-based application with Mapbox-GL to display map graphics/UI integrated with MicaSense tile data for users",
+          },
+          { text: "(+ Internships at Estech Systems and Credera)" },
+        ],
       },
     ],
   },
   {
-    title: 'Education',
-    lines: [
+    title: "Projects",
+    entries: [
       {
-        text: 'University of Texas at Dallas - B.S. Software Engineering',
-        critical: true,
+        title: "Careernova.pro – Automated Cover Letter Generator",
+        bullets: [
+          {
+            text: "Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.",
+            critical: true,
+          },
+        ],
       },
-      { text: 'focus: Human-Computer Interaction' },
+    ],
+  },
+  {
+    title: "Education",
+    entries: [
       {
-        text:
-          'Technical Officer of UX Club, User Researcher in FIVE Lab with Dr. Ryan McMahan',
+        title: "University of Texas at Dallas – B.S. Software Engineering",
+        bullets: [
+          { text: "focus: Human-Computer Interaction" },
+          {
+            text: "Technical Officer of UX Club, User Researcher in FIVE Lab with Dr. Ryan McMahan",
+          },
+        ],
       },
     ],
   },
@@ -108,57 +120,88 @@ const sections: Section[] = [
 
 const abridged = sections.map((section) => ({
   ...section,
-  lines: section.lines.filter((l) => l.critical),
+  entries: section.entries.map((entry) => ({
+    ...entry,
+    bullets: entry.bullets.filter((b) => b.critical),
+  })),
 }));
 ---
 
-<Layout title='Resume' pageTitle='Resume' description='Thomas Augustus Grice Resume'>
-  <main class='bg-yellow p-6'>
-    <h2 class='text-3xl md:text-5xl dm-serif'>Resume</h2>
-    <p class='poppins mt-2'>Below you can switch between a short overview and a detailed resume.</p>
-    <div class='my-4'>
-      <button id='resumeToggle' class='border-2 border-black px-4 py-2 bg-white card-shadow'>Show detailed resume</button>
+<Layout
+  title="Resume"
+  pageTitle="Resume"
+  description="Thomas Augustus Grice Resume"
+>
+  <main class="bg-yellow p-6">
+    <h2 class="text-3xl md:text-5xl dm-serif">Resume</h2>
+    <p class="poppins mt-2">
+      Below you can switch between a short overview and a detailed resume.
+    </p>
+    <div class="my-4">
+      <button
+        id="resumeToggle"
+        class="border-2 border-black px-4 py-2 bg-white card-shadow"
+        >Show detailed resume</button
+      >
     </div>
-    <section id='abridged'>
-      <h3 class='text-2xl dm-serif'>Abridged</h3>
-      {abridged.map((section) => (
-        <div class='mt-4'>
-          <h4 class='text-xl dm-serif'>{section.title}</h4>
-          <ul class='list-disc pl-4'>
-            {section.lines.map((line) => (
-              <li class='poppins'>{line.text}</li>
+    <section id="abridged">
+      <h3 class="text-2xl dm-serif">Abridged</h3>
+      {
+        abridged.map((section) => (
+          <div class="mt-4">
+            <h4 class="text-xl dm-serif">{section.title}</h4>
+            {section.entries.map((entry) => (
+              <div class="mt-2">
+                <h5 class="poppins font-semibold">{entry.title}</h5>
+                {entry.bullets.length > 0 && (
+                  <ul class="list-disc pl-4">
+                    {entry.bullets.map((b) => (
+                      <li class="poppins">{b.text}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
-          </ul>
-        </div>
-      ))}
+          </div>
+        ))
+      }
     </section>
-    <section id='detailed' style='display:none;'>
-      <h3 class='text-2xl dm-serif'>Detailed</h3>
-      {sections.map((section) => (
-        <div class='mt-4'>
-          <h4 class='text-xl dm-serif'>{section.title}</h4>
-          <ul class='list-disc pl-4'>
-            {section.lines.map((line) => (
-              <li class='poppins'>{line.text}</li>
+    <section id="detailed" style="display:none;">
+      <h3 class="text-2xl dm-serif">Detailed</h3>
+      {
+        sections.map((section) => (
+          <div class="mt-4">
+            <h4 class="text-xl dm-serif">{section.title}</h4>
+            {section.entries.map((entry) => (
+              <div class="mt-2">
+                <h5 class="poppins font-semibold">{entry.title}</h5>
+                {entry.bullets.length > 0 && (
+                  <ul class="list-disc pl-4">
+                    {entry.bullets.map((b) => (
+                      <li class="poppins">{b.text}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
-          </ul>
-        </div>
-      ))}
+          </div>
+        ))
+      }
     </section>
   </main>
   <script>
-    const btn = document.getElementById('resumeToggle');
-    const abr = document.getElementById('abridged');
-    const det = document.getElementById('detailed');
-    btn?.addEventListener('click', () => {
-      if (det.style.display === 'none') {
-        det.style.display = 'block';
-        abr.style.display = 'none';
-        btn.textContent = 'Show abridged resume';
+    const btn = document.getElementById("resumeToggle");
+    const abr = document.getElementById("abridged");
+    const det = document.getElementById("detailed");
+    btn?.addEventListener("click", () => {
+      if (det.style.display === "none") {
+        det.style.display = "block";
+        abr.style.display = "none";
+        btn.textContent = "Show abridged resume";
       } else {
-        det.style.display = 'none';
-        abr.style.display = 'block';
-        btn.textContent = 'Show detailed resume';
+        det.style.display = "none";
+        abr.style.display = "block";
+        btn.textContent = "Show detailed resume";
       }
     });
   </script>

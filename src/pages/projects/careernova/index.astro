@@ -1,23 +1,41 @@
 ---
-import ProjectLayout from '@layouts/Project.astro';
-import careernova1 from '@assets/projects/careernova1.png';
-import careernova2 from '@assets/projects/careernova2.png';
+import ProjectLayout from "@layouts/Project.astro";
+import careernova1 from "@assets/projects/careernova1.png";
+import careernova2 from "@assets/projects/careernova2.png";
 
 const images = [careernova1, careernova2];
 ---
 
 <ProjectLayout
-  title='Careernova'
-  description='About Careernova'
+  title="Careernova"
+  description="About Careernova"
   images={images}
-  mainClass='bg-blue p-6'
-  href=`https://careernova.com`
-  linkText='Visit site \u2192'
+  mainClass="bg-blue p-6"
+  siteHref="https://careernova.com"
+  repoHref="https://github.com/z0d14c/careernova"
 >
-  <p class='poppins mt-4'>Careernova is a platform for job seekers to tailor their resume to a given job description.</p>
-  <p class='poppins mt-4'>I built this project a few months after ChatGPT was released looking for excused to play around with LLMs.</p>
-  <p class='poppins mt-4'>I was interested in combining the feature of critiquing/tailoring resumes along with writing cover letters.</p>
-  <p class='poppins mt-4'>One challenge was dealing with the non-determinism of LLMs. This was early on before best practices had been established.</p>
-  <p class='poppins mt-4'>I used one/few-shot prompting to reasonable effect. The next thing I would have added is probably a retry mechanism, although I never got around to it.</p>
-  <p class='poppins mt-4'>The UI also had some interesting details, using {`<mark>`}s to highlight the critique and suggestions based on LLM output.</p>
+  <p class="poppins mt-4">
+    Careernova is a platform for job seekers to tailor their resume to a given
+    job description.
+  </p>
+  <p class="poppins mt-4">
+    I built this project a few months after ChatGPT was released looking for
+    excused to play around with LLMs.
+  </p>
+  <p class="poppins mt-4">
+    I was interested in combining the feature of critiquing/tailoring resumes
+    along with writing cover letters.
+  </p>
+  <p class="poppins mt-4">
+    One challenge was dealing with the non-determinism of LLMs. This was early
+    on before best practices had been established.
+  </p>
+  <p class="poppins mt-4">
+    I used one/few-shot prompting to reasonable effect. The next thing I would
+    have added is probably a retry mechanism, although I never got around to it.
+  </p>
+  <p class="poppins mt-4">
+    The UI also had some interesting details, using {`<mark>`}s to highlight the
+    critique and suggestions based on LLM output.
+  </p>
 </ProjectLayout>
