@@ -50,9 +50,6 @@ export default function ResumeToggle({ sections, abridged }: Props) {
   return (
     <main className="bg-yellow p-6">
       <h2 className="text-3xl md:text-5xl dm-serif">Resume</h2>
-      <p className="poppins mt-2">
-        Below you can switch between a short overview and a detailed resume.
-      </p>
       <div className="my-4">
         <button
           onClick={() => setShowDetailed((d) => !d)}
@@ -62,15 +59,9 @@ export default function ResumeToggle({ sections, abridged }: Props) {
         </button>
       </div>
       {showDetailed ? (
-        <section>
-          <h3 className="text-2xl dm-serif">Detailed</h3>
-          {renderSections(sections)}
-        </section>
+        <section>{renderSections(sections)}</section>
       ) : (
-        <section>
-          <h3 className="text-2xl dm-serif">Abridged</h3>
-          {renderSections(abridged)}
-        </section>
+        <section>{renderSections(abridged)}</section>
       )}
     </main>
   );
