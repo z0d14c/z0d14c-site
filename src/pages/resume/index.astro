@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Default.astro";
 import ResumeToggle from "@components/resume/ResumeToggle.tsx";
+import { projects } from "@data/projects";
 
 interface Bullet {
   text: string;
@@ -21,8 +22,9 @@ const sections: Section[] = [
   {
     title: "Experience",
     entries: [
-    {
-        title: "Stoke Space Technology - Senior Software Engineer (Jun 2023 - Jun 2025)",
+      {
+        title:
+          "Stoke Space Technology - Senior Software Engineer (Jun 2023 - Jun 2025)",
         bullets: [
           {
             text: "Lead rewrite of inventory subsystem, converting it to a concurrency-safe, service-oriented architecture to support lot-based metadata among other features",
@@ -38,12 +40,12 @@ const sections: Section[] = [
           },
           {
             text: "Design and implement inventory BOM tree traversal and export functionality, including BOM export UI and circular dependency detection",
-            critical: true
+            critical: true,
           },
           {
             text: "Assist rewrite of workplan instruction platform, including multiselect, copy-paste, and concurrency safety",
             critical: true,
-          }
+          },
         ],
       },
       {
@@ -56,8 +58,7 @@ const sections: Section[] = [
         ],
       },
       {
-        title:
-          "Frontend Engineer II - Amazon and AWS (Nov 2018 - Jun 2022)",
+        title: "Frontend Engineer II - Amazon and AWS (Nov 2018 - Jun 2022)",
         bullets: [
           {
             text: "Crafted complex, composable UI components such as ExpressionEditor to enable users to add conditional logic to their applications without writing code; rewrote SlateJS-based text editor widget to support new features such as copy/paste and overall stability, add types",
@@ -80,7 +81,7 @@ const sections: Section[] = [
           },
           {
             text: "Heavily involved in hiring and training team members, participating in ~40 interview loops and mentoring team members and interns, including designing their project assignments and onboarding them to our software architectures and systems.",
-            critical: true
+            critical: true,
           },
         ],
       },
@@ -115,27 +116,25 @@ const sections: Section[] = [
     ],
   },
   {
-    title: "Projects",
+    title: "Skills",
     entries: [
       {
-        title: "Careernova.pro - Automated Cover Letter Generator",
+        title: "",
         bullets: [
           {
-            text: "Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.",
+            text: "NodeJS, Javascript, Typescript, AWS, Mapbox, Leaflet, Postgres, Graphql, Redux, Prisma, SQL, CSS, HTML, Web, e2e/unit/integration testing",
             critical: true,
           },
         ],
       },
-      {
-          title: "Circlepop - Transit and Population Within A Circle",
-          bullets: [
-            {
-              text: "Full-stack project using React along with Neon to host PostGRES and Vercel to host the frontend. Reveals population and transit stop data within a given circle.",
-              critical: true,
-            },
-        ],
-        }
     ],
+  },
+  {
+    title: "Projects",
+    entries: projects.map((p) => ({
+      title: p.title,
+      bullets: [{ text: p.description, critical: true }],
+    })),
   },
   {
     title: "Education",
@@ -146,7 +145,7 @@ const sections: Section[] = [
           { text: "focus: Human-Computer Interaction" },
           {
             text: "Technical Officer of UX Club, User Researcher in FIVE Lab with Dr. Ryan McMahan",
-            critical: true
+            critical: true,
           },
         ],
       },
@@ -168,9 +167,5 @@ const abridged = sections.map((section) => ({
   pageTitle="Resume"
   description="Thomas Augustus Grice Resume"
 >
-  <ResumeToggle
-    sections={sections}
-    abridged={abridged}
-    client:only="react"
-  />
+  <ResumeToggle sections={sections} abridged={abridged} client:only="react" />
 </Layout>

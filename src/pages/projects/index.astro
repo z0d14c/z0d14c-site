@@ -1,29 +1,17 @@
 ---
-import Layout from '@layouts/Default.astro';
-import SummaryCard from '@components/generic/SummaryCard.astro';
-import careernovaImg from '@assets/projects/careernova1.png';
-import circlepopImg from '@assets/projects/circlepop1.png';
-
-const projects = [
-  {
-    title: 'Circlepop',
-    description: 'Proof of concept for a transit and population density map within a given radius',
-    img: circlepopImg,
-    slug: 'circlepop',
-  },
-  {
-    title: 'Careernova',
-    description: 'A platform for job seekers to tailor their resume to a given job description',
-    img: careernovaImg,
-    slug: 'careernova',
-  },
-];
+import Layout from "@layouts/Default.astro";
+import SummaryCard from "@components/generic/SummaryCard.astro";
+import { projects } from "@data/projects";
 ---
 
-<Layout title='Projects' pageTitle='Software Projects' description='Software projects by Thomas Augustus Grice'>
-  <main class='bg-purple p-6'>
-    <h2 class='text-3xl md:text-5xl dm-serif mb-4'>Software Projects</h2>
-    <ul class='grid md:grid-cols-2 gap-8'>
+<Layout
+  title="Projects"
+  pageTitle="Software Projects"
+  description="Software projects by Thomas Augustus Grice"
+>
+  <main class="bg-purple p-6">
+    <h2 class="text-3xl md:text-5xl dm-serif mb-4">Software Projects</h2>
+    <ul class="grid md:grid-cols-2 gap-8">
       {
         projects.map((proj) => (
           <li>
@@ -33,7 +21,7 @@ const projects = [
               imgAlt={proj.title}
               description={proj.description}
               href={`/projects/${proj.slug}/`}
-              linkText='View project \u2192'
+              linkText="View project \u2192"
             />
           </li>
         ))
