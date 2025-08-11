@@ -22,32 +22,42 @@ const sections: Section[] = [
     title: "Experience",
     entries: [
     {
-        title: "Stoke Space Technology – Senior Software Engineer (Jun 2023 - Jun 2025)",
+        title: "Stoke Space Technology - Senior Software Engineer (Jun 2023 - Jun 2025)",
         bullets: [
           {
-            text: "Lead rewrite of the inventory subsystem, converting it to a concurrency-safe, service-oriented architecture to support lot-based metadata among other features.",
+            text: "Lead rewrite of inventory subsystem, converting it to a concurrency-safe, service-oriented architecture to support lot-based metadata among other features",
+            critical: true,
+          },
+          {
+            text: "Extend activity logging architecture to handle lot and serial-based logging",
             critical: true,
           },
           {
             text: "Lead rewrite of reports functionality to support critical manufacturing floor NCR operations",
+            critical: true,
           },
           {
-            text: "Design and implement inventory BOM tree traversal and export functionality",
+            text: "Design and implement inventory BOM tree traversal and export functionality, including BOM export UI and circular dependency detection",
+            critical: true
           },
+          {
+            text: "Assist rewrite of workplan instruction platform, including multiselect, copy-paste, and concurrency safety",
+            critical: true,
+          }
         ],
       },
       {
-        title: "Freelance UI Engineer – Various (Jan 2023 - Present)",
+        title: "Freelance UI Engineer - Various (Jan 2023 - Present)",
         bullets: [
           {
-            text: "Assist various companies with full-stack engineering in service of creating more powerful and usable experiences for their customers. Focused on Typescript, JS, Node- and React-based technologies, while also utilizing other languages like Ruby as needed.",
+            text: "Assist various companies with full-stack engineering to create powerful and usable experiences. Focused on Typescript, JS, Node- and React-based technologies, while utilizing other tech as needed.",
             critical: true,
           },
         ],
       },
       {
         title:
-          "Frontend Engineer II – Amazon Web Services (Nov 2018 - Jun 2022)",
+          "Frontend Engineer II - Amazon and AWS (Nov 2018 - Jun 2022)",
         bullets: [
           {
             text: "Crafted complex, composable UI components such as ExpressionEditor to enable users to add conditional logic to their applications without writing code; rewrote SlateJS-based text editor widget to support new features such as copy/paste and overall stability, add types",
@@ -55,6 +65,7 @@ const sections: Section[] = [
           },
           {
             text: "Supervised and mentored junior engineers to write metrics, alarms, and dashboards code, resulting in clear visibility into frontend app performance before and after product launch. Successfully instrumented all major features with associated metrics and alarms achieving visibility into performance used in daily standups and severe event analysis",
+            critical: true,
           },
           {
             text: "Designed and implemented frontend logging and analytics middleware to log Redux actions and parameters using allowlist/blocklist pattern, and influenced the rest of the organization to adopt it. Consequently, debugging high severity events became significantly easier while enabling teams to protect themselves from sensitive data leaks.",
@@ -65,18 +76,17 @@ const sections: Section[] = [
           { text: "Promoted from FEE1 -> FEE2" },
           {
             text: "Designed Figma wireframes, conducted user surveys, and created the technical design for Imperium UI. Successfully transitioned Network Device Automation from a CLI to a UI-based system, impacting thousands of Amazon employees.",
-          },
-          {
-            text: "Directed the implementation of Imperium UI MVP from scratch and spearheaded key aspects such as device details and overall frontend architecture.",
+            critical: true,
           },
           {
             text: "Heavily involved in hiring and training team members, participating in ~40 interview loops and mentoring team members and interns, including designing their project assignments and onboarding them to our software architectures and systems.",
+            critical: true
           },
         ],
       },
       {
         title:
-          "Member of Technical Staff 2 / UX Team Lead – Igneous Systems (Sep 2017 - Oct 2018)",
+          "Member of Technical Staff 2 / UX Team Lead - Igneous Systems (Sep 2017 - Oct 2018)",
         bullets: [
           {
             text: "Implemented end-to-end testing framework (Cypress) to increase the resilience of the frontend product, ensuring higher quality and better user experience.",
@@ -90,7 +100,7 @@ const sections: Section[] = [
         ],
       },
       {
-        title: "Software Engineer – MicaSense (Aug 2016 - Jul 2017)",
+        title: "Software Engineer - MicaSense (Aug 2016 - Jul 2017)",
         bullets: [
           {
             text: "Migrated legacy Backbone.js front-end to a React-Redux stack in just a few months",
@@ -108,7 +118,7 @@ const sections: Section[] = [
     title: "Projects",
     entries: [
       {
-        title: "Careernova.pro – Automated Cover Letter Generator",
+        title: "Careernova.pro - Automated Cover Letter Generator",
         bullets: [
           {
             text: "Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.",
@@ -116,17 +126,27 @@ const sections: Section[] = [
           },
         ],
       },
+      {
+          title: "Circlepop - Transit and Population Within A Circle",
+          bullets: [
+            {
+              text: "Full-stack project using React along with Neon to host PostGRES and Vercel to host the frontend. Reveals population and transit stop data within a given circle.",
+              critical: true,
+            },
+        ],
+        }
     ],
   },
   {
     title: "Education",
     entries: [
       {
-        title: "University of Texas at Dallas – B.S. Software Engineering",
+        title: "University of Texas at Dallas - B.S. Software Engineering",
         bullets: [
           { text: "focus: Human-Computer Interaction" },
           {
             text: "Technical Officer of UX Club, User Researcher in FIVE Lab with Dr. Ryan McMahan",
+            critical: true
           },
         ],
       },
