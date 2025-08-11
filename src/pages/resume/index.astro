@@ -133,7 +133,7 @@ const sections: Section[] = [
     title: "Projects",
     entries: projectSummaries.map((p) => ({
       title: p.resumeTitle,
-      bullets: [{ text: p.resumeBullet, critical: true }],
+      bullets: [{ text: p.description, critical: true }],
     })),
   },
   {
