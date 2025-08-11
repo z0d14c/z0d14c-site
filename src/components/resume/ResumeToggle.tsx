@@ -48,9 +48,15 @@ export default function ResumeToggle({ sections, abridged }: Props) {
   );
 
   return (
-    <main className="bg-yellow p-6">
-      <h2 className="text-3xl md:text-5xl dm-serif">Resume</h2>
-      <div className="my-4">
+    <main className="bg-yellow p-6 print:bg-white">
+      <div className="hidden print:block mb-4">
+        <h1 className="text-xl font-bold">Thomas Augustus Grice</h1>
+        <p>Austin, TX</p>
+        <p>github.com/z0d14c</p>
+        <p>grice.city</p>
+      </div>
+      <h2 className="text-3xl md:text-5xl dm-serif print:hidden">Resume</h2>
+      <div className="my-4 print:hidden">
         <button
           onClick={() => setShowDetailed((d) => !d)}
           className="border-2 border-black px-4 py-2 bg-white card-shadow"
