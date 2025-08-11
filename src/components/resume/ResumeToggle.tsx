@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 interface Bullet {
   text: string;
@@ -28,9 +28,11 @@ export default function ResumeToggle({ sections, abridged }: Props) {
       {list.map((section) => (
         <div className="mt-4" key={section.title}>
           <h4 className="text-xl dm-serif">{section.title}</h4>
-          {section.entries.map((entry) => (
-            <div className="mt-2" key={entry.title}>
-              <h5 className="poppins font-semibold">{entry.title}</h5>
+          {section.entries.map((entry, i) => (
+            <div className="mt-2" key={entry.title || i}>
+              {entry.title && (
+                <h5 className="poppins font-semibold">{entry.title}</h5>
+              )}
               {entry.bullets.length > 0 && (
                 <ul className="list-disc pl-4">
                   {entry.bullets.map((b, i) => (
@@ -48,7 +50,7 @@ export default function ResumeToggle({ sections, abridged }: Props) {
   );
 
   return (
-    <main className="bg-yellow p-6 print:bg-white">
+    <main className="bg-yellow p-6 print:bg-white max-w-3xl mx-auto print:max-w-full">
       <div className="hidden print:block mb-4">
         <h1 className="text-xl font-bold">Thomas Augustus Grice</h1>
         <p>Austin, TX</p>
@@ -61,7 +63,7 @@ export default function ResumeToggle({ sections, abridged }: Props) {
           onClick={() => setShowDetailed((d) => !d)}
           className="border-2 border-black px-4 py-2 bg-white card-shadow"
         >
-          {showDetailed ? 'Show abridged resume' : 'Show detailed resume'}
+          {showDetailed ? "Show abridged resume" : "Show detailed resume"}
         </button>
       </div>
       {showDetailed ? (
