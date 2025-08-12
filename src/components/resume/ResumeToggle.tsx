@@ -55,7 +55,6 @@ export default function ResumeToggle({ sections, abridged }: Props) {
         <div className="hidden print:block mb-4">
           <h1 className="text-xl font-bold">Thomas Augustus Grice</h1>
           <p>Austin, TX</p>
-          <p>github.com/z0d14c</p>
           <p>grice.city</p>
         </div>
         <h2 className="text-3xl md:text-5xl dm-serif print:hidden">Resume</h2>

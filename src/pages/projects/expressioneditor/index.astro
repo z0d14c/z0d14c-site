@@ -1,0 +1,25 @@
+---
+import ProjectLayout from "@layouts/Project.astro";
+import expressioneditor1 from "@assets/projects/expressioneditor1.png";
+import expressioneditor2 from "@assets/projects/expressioneditor2.png";
+
+const images = [expressioneditor1, expressioneditor2];
+
+const paragraphs = [
+  "<strong>ExpressionEditor</strong> is a reusable UI component for defining conditional logic in a visual manner.",
+  "This was one of many UI components I built for Amazon Honeycode. The intention was for the app builder portion of the app to use this to define conditional logic (e.g. when quantity < 10, turn this button a different color).",
+  "Implementation involved using a well-tested custom React hook to manage state, and the component itself was stored in our UI Platform within the monorepo for reuse by anyone, although this component was mainly used by the App Builder team within Honeycode. (I was previously on that team before moving to UI Platform, which made me a good choice to build it)",
+  "There were numerous details to track and handle within this component, including validating the available options which referred to variables available within the application, and allowing the user to \"override\" the wizard and enter a custom formula by hand.",
+  "In addition to this component, I was in charge of many other components and features within and outside of the App Builder vertical, including GridList, SkipTo, ClickAwayListener, Form wrappers, keyboard shortcuts, and more.",
+  "Unfortunately, Honeycode as a product is no more, but this component was a fun challenge to build and I consider it my greatest single achievement in my time at Amazon."
+];
+---
+
+<ProjectLayout
+  title="ExpressionEditor"
+  description="About ExpressionEditor"
+  images={images}
+  mainClass="bg-blue p-6"
+  siteHref="https://aws.amazon.com/blogs/aws/introducing-amazon-honeycode-build-web-mobile-apps-without-writing-code/"
+  paragraphs={paragraphs}
+/>

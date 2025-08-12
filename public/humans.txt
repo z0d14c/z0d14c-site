@@ -1,6 +1,6 @@
-## Brutal Theme ##
+## grice.city ##
 
-All development & Content by Elian Van Cutsem
+All development & Content by Thomas Grice
 
-- email: hello@elian.codes
-- website: www.elian.codes
+- email: augustus.grice@gmail.com
+- website: grice.city
