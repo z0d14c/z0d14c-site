@@ -1,9 +1,11 @@
 ---
 import Layout from '@layouts/Default.astro';
+import meImage from '@assets/me.jpg';
 ---
 
 <Layout title='Home' pageTitle='Home' description='How to reach Thomas Augustus Grice'>
   <main class='bg-blue p-6 flex flex-col items-center text-center'>
+    <img src={meImage.src} alt='Portrait of Thomas Augustus Grice' class='w-40 h-40 rounded-full' />
     <p class='poppins mt-2'>Software engineer, urbanist, creator</p>
     <p class='poppins mt-2 flex items-center gap-2'>
       <span class='i-uil-envelope w-4 h-4 inline-block'></span>
