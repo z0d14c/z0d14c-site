@@ -2,6 +2,7 @@ import type { ImageMetadata } from "astro:assets";
 import careernovaImg from "../assets/projects/careernova1.png";
 import circlepopImg from "../assets/projects/circlepop1.png";
 import expressionEditorImg from "../assets/projects/expressioneditor1.png";
+import micasenseImg from "../assets/projects/micasense1.jpeg";
 
 export interface ProjectSummary {
   slug: string;
@@ -9,7 +10,7 @@ export interface ProjectSummary {
   img: ImageMetadata;
   resumeTitle: string;
   description: string;
-  critical: boolean;
+  critical: boolean; // whether this should be displayed on the resume
 }
 
 export const projectSummaries: ProjectSummary[] = [
@@ -38,6 +39,15 @@ export const projectSummaries: ProjectSummary[] = [
     resumeTitle: "Expression Editor - Conditional Logic Editor (AWS Honeycode)",
     description:
       "Complex reusable UI component for defining conditional logic in a visual manner",
+    critical: false,
+  },
+  {
+    slug: "micasense",
+    title: "MicaSense (React port)",
+    img: micasenseImg,
+    resumeTitle: "MicaSense - Port to React",
+    description:
+      "Ported the existing Backbonejs-based app to React, using React + Leaflet to display multispectral data",
     critical: false,
   },
 ];

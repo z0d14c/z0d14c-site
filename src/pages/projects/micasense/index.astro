@@ -1,0 +1,27 @@
+---
+import ProjectLayout from "@layouts/Project.astro";
+import micasense1 from "@assets/projects/micasense1.jpeg";
+import micasense2 from "@assets/projects/micasense2.jpeg";
+import micasense3 from "@assets/projects/micasense3.jpeg";
+
+const images = [micasense1, micasense2, micasense3];
+
+const paragraphs = [
+  "This was the first major project I worked on at Micasense, and it was porting the entire frontend app to React. I was the sole frontend engineer on the team.",
+  "I did work with a few contractors to help with the project -- React was new and the folks at Formidable (I believe they are under a different name now, maybe Nearform) were helpful getting us up to speed on best practices.",
+  "Micasense ended up dropping software development to focus on their hardware devices so most software development roles were eliminated and I ended up moving on to work at Igneous (and then Amazon) shortly afterwards.",
+  "Still, I consider this project a success, as we greatly improved the tech stack and extensibility of the app by moving to a more declarative pattern with React.",
+  "I don't think this app is still alive anywhere today, but the gist of it was that it was a web app that allowed users to view multispectral drone imagery in a map interface after uploading their data and having our systems process it.",
+  "There were some interesting UI challenges -- including displaying a timeline of data, a color histogram, and dealing with syncing React state and Leaflet.",
+  "I even ended up shipping a <a href='https://github.com/Leaflet/Leaflet.draw/pull/661'>bug fix</a> to Leaflet Draw.",
+];
+---
+
+<ProjectLayout
+  title="Micasense"
+  description=""
+  images={images}
+  mainClass="bg-blue p-6"
+  siteHref="https://ageagle.com/solutions/micasense-series-multispectral-cameras/"
+  paragraphs={paragraphs}
+/>
