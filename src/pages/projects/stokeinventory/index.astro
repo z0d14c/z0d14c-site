@@ -1,0 +1,27 @@
+---
+import ProjectLayout from "@layouts/Project.astro";
+import boltlineinventory from "@assets/projects/boltlineinventory.webp";
+
+const images = [boltlineinventory];
+
+const paragraphs = [
+  "Boltline inventory management at one point lacked distinct handling of metadata (activity, attachments, comments, custom fields) for lot- vs. serial-based inventory.",
+  "Secondarily, splitting and merging lot-based inventory also contained critical bugs, with inventory in some cases disappearing or increasing due to concurrency issues.",
+  "I created a technical design accommodating incremental development (using dual-write approach) along with feature flagging and data migration to safely roll-out lot-based metadata for our users.",
+  "millions of inventory items in Boltline. I was also responsible for requirements engineering and working with design and customers to ensure the features made sense for users.",
+  "In essence, this meant moving to a pattern where data was associated with specific lots instead of treating all inventory line items as serialized. So multiple pieces of inventory in the same lot all shared the same activity and so forth.",
+  "This needed to support inventory with splittable and mergeable quantities where the metadata would persist if you moved e.g. 2 screws from a stack of 4 to another location or assembly.",
+  "Initially, this project entailed a severe rework of our database tables and UI and was looking like a year or more of work. I boiled down the design to make more use of existing components and shipped a working production version without damaging any existing user's data in 3-4 months.",
+  "As part of the secondary goal of this project which was making splitting/merging inventory more bug-free and robust, I refactored splitting/merging functions and added concurrency safety as well as rigorous integration testing to ensure inventory was safely movable and splittable.",
+  "I also influenced the future/long-term vision of the product and how this feature could be expanded to be even more useful and intuitive for users (e.g. with lot-forking features).",
+  "Note: image is from Boltline marketing website from a serialized item."
+];
+---
+
+<ProjectLayout
+  title="Boltline"
+  description="Inventory metadata rework"
+  images={images}
+  mainClass="bg-blue p-6"
+  paragraphs={paragraphs}
+/>
