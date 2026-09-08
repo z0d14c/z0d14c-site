@@ -1,0 +1,58 @@
+---
+import ProjectLayout from "@layouts/Project.astro";
+import forecastDashboard from "@assets/projects/footgold/01-forecast-dashboard.jpg";
+import executableDecision from "@assets/projects/footgold/02-executable-decision.jpg";
+import researchWorkspace from "@assets/projects/footgold/03-research-workspace.jpg";
+import modelAudit from "@assets/projects/footgold/04-model-audit.jpg";
+import modelExplainer from "@assets/projects/footgold/05-model-explainer.jpg";
+import probabilityMarketComparison from "@assets/projects/footgold/06-probability-market-comparison.jpg";
+
+const images = [
+  forecastDashboard,
+  probabilityMarketComparison,
+  researchWorkspace,
+  modelAudit,
+  modelExplainer,
+  executableDecision,
+];
+
+const imageAlts = [
+  "Footgold's dark green and cream dashboard showing upcoming matches, summary metrics, filters, model version, and the largest model-to-market edge.",
+  "Expanded Seattle versus Portland analysis comparing football probabilities with executable YES and NO market prices, fees, edges, and expected returns.",
+  "Footgold research board showing a saved match brief, rest differential, forecast baseline, evidence, and final-analysis status.",
+  "Footgold model audit showing candidate performance, realized return, model comparison controls, experimental status, and a cautionary recommendation.",
+  "Footgold model guide explaining domestic form, cross-league translation, penalty modeling, and market-independent release gates.",
+  "Expanded Seattle versus Portland match card showing the proposed contract, executable price, model edge, expected return, and recent form.",
+];
+
+const imageCaptions = [
+  "The dashboard turns 11 competitions into one scan-friendly decision queue.",
+  "Independent football probabilities sit beside executable YES/NO prices and fee-adjusted returns.",
+  "Research, lineup questions, schedule context, and analysis status stay attached to the same frozen forecast.",
+  "Each major release carries an immutable audit, including failed or inconclusive experiments.",
+  "A visual explainer makes the model's inputs, fallbacks, and release gates inspectable.",
+  "A compact fixture expands into an explicit action state without hiding uncertainty or execution costs.",
+];
+
+const paragraphs = [
+  "<strong>Footgold</strong> is an allowlisted football decision lab I built to make forecasting inspectable rather than oracular. It covers 11 competitions and combines point-in-time probabilities, executable Kalshi prices, structured research, a personal decision ledger, and model audits in one operational interface.",
+  "The central design constraint is separation. Forecasts use only information available before kickoff; market prices are compared only after the probability is frozen; and qualitative research can change the decision context without silently editing the football model.",
+  "I designed and built the product end to end with Next.js, React, TypeScript, Drizzle ORM, Neon Postgres, Clerk, Vercel, OpenAI, Sportmonks, American Soccer Analysis, and Kalshi.",
+  "The main interface challenge was turning uncertain evidence into explicit states—action, pass, wait for a lineup, experimental, or fallback—while still exposing probabilities, both sides of a market, fees, expected return, data freshness, and model version.",
+  "Each major forecast release ships with an immutable historical audit. Failed or inconclusive experiments stay visible rather than being erased; the current audit explicitly warns when an apparent edge has not translated into a validated wagering signal.",
+  "Footgold is experimental decision-support software, not a promise of profitable betting. Its value is the evidence trail: a workflow for screening matches, recording decisions, and learning honestly from later results. The screenshots above use synthetic local data and contain no private account information.",
+];
+---
+
+<ProjectLayout
+  title="Footgold"
+  description="About Footgold, a football forecasting and decision lab"
+  images={images}
+  imageAlts={imageAlts}
+  imageCaptions={imageCaptions}
+  imageHeight={450}
+  mainClass="bg-blue p-6"
+  siteHref="https://footgold.grice.city"
+  siteLinkText="Visit Footgold →"
+  paragraphs={paragraphs}
+/>

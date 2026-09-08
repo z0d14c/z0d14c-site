@@ -1,32 +1,59 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro:assets';
-import '@splidejs/splide/css';
-import ImageCarouselClient from './ImageCarousel.tsx';
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro:assets";
+import "@splidejs/splide/css";
+import ImageCarouselClient from "./ImageCarousel.tsx";
 
 interface Props {
   images: ImageMetadata[];
+  imageAlts?: string[];
+  imageCaptions?: string[];
+  imageHeight?: number;
 }
 
-const { images } = Astro.props;
+const {
+  images,
+  imageAlts = [],
+  imageCaptions = [],
+  imageHeight = 400,
+} = Astro.props;
 ---
 
-<div class='splide max-w-full md:max-w-3xl mx-auto'>
-  <div class='splide__track'>
-    <ul class='splide__list'>
-      {images.map((img) => (
-        <li class='splide__slide'>
-          <Image
-            src={img}
-            alt=''
-            width={800}
-            height={400}
-            class='rounded border-2 border-black w-full h-auto max-h-96 object-contain mx-auto'
-          />
-        </li>
-      ))}
+<div class="project-carousel splide max-w-full md:max-w-3xl mx-auto">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {
+        images.map((img, index) => (
+          <li class="splide__slide">
+            <figure>
+              <Image
+                src={img}
+                alt={imageAlts[index] ?? ""}
+                width={800}
+                height={imageHeight}
+                class="rounded border-2 border-black w-full h-auto max-h-96 object-contain mx-auto"
+              />
+              {imageCaptions[index] && (
+                <figcaption class="poppins mt-3 px-10 text-center text-sm">
+                  {imageCaptions[index]}
+                </figcaption>
+              )}
+            </figure>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </div>
 
 <ImageCarouselClient client:only="react" />
+
+<style>
+  .project-carousel {
+    padding-bottom: 2.5rem;
+  }
+
+  .project-carousel :global(.splide__pagination) {
+    bottom: 0.25rem;
+  }
+</style>

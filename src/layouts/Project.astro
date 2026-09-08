@@ -7,6 +7,9 @@ interface Props {
   title: string;
   description: string;
   images?: ImageMetadata[];
+  imageAlts?: string[];
+  imageCaptions?: string[];
+  imageHeight?: number;
   mainClass?: string;
   siteHref?: string;
   siteLinkText?: string;
@@ -19,6 +22,9 @@ const {
   title,
   description,
   images = [],
+  imageAlts = [],
+  imageCaptions = [],
+  imageHeight = 400,
   mainClass = "bg-blue p-6",
   siteHref,
   siteLinkText = "Visit site \u2192",
@@ -53,7 +59,16 @@ const {
         </div>
       )
     }
-    {images.length > 0 && <ImageCarousel images={images} />}
+    {
+      images.length > 0 && (
+        <ImageCarousel
+          images={images}
+          imageAlts={imageAlts}
+          imageCaptions={imageCaptions}
+          imageHeight={imageHeight}
+        />
+      )
+    }
     {
       paragraphs.length > 0 && (
         <section class="mx-auto max-w-6xl px-6 py-10 md:py-14">

@@ -2,9 +2,9 @@ import type { ImageMetadata } from "astro:assets";
 import careernovaImg from "../assets/projects/careernova1.png";
 import circlepopImg from "../assets/projects/circlepop1.png";
 import expressionEditorImg from "../assets/projects/expressioneditor1.png";
+import footgoldImg from "../assets/projects/footgold/01-forecast-dashboard.jpg";
 import micasenseImg from "../assets/projects/micasense1.jpeg";
 import stokeImg from "../assets/projects/boltlineinventory.webp";
-
 
 export interface ProjectSummary {
   slug: string;
@@ -17,12 +17,22 @@ export interface ProjectSummary {
 
 export const projectSummaries: ProjectSummary[] = [
   {
+    slug: "footgold",
+    title: "Footgold",
+    img: footgoldImg,
+    resumeTitle: "Footgold - Football Forecasting and Decision Lab",
+    description:
+      "Full-stack football decision lab combining versioned pre-match forecasts, executable market prices, structured research, a decision ledger, and immutable model audits across 11 competitions.",
+    critical: true,
+  },
+  {
     slug: "stokeinventory",
     title: "Stoke/Boltline - Inventory Metadata Rework",
     img: stokeImg,
     resumeTitle: "Stoke/Boltline - Inventory Metadata Rework",
-    critical: false, // mostly because I talk about it in the stoke section anyway 
-    description: "Rewrote inventory metadata handling in Stoke's Boltline inventory product to handle lot metadata -- along the way handling concurrency and migration and rollout for millions of pieces of inventory."
+    critical: false, // mostly because I talk about it in the stoke section anyway
+    description:
+      "Rewrote inventory metadata handling in Stoke's Boltline inventory product to handle lot metadata -- along the way handling concurrency and migration and rollout for millions of pieces of inventory.",
   },
   {
     slug: "careernova",
@@ -32,7 +42,7 @@ export const projectSummaries: ProjectSummary[] = [
     description:
       "Full-stack project; uses SST framework (as a means to manage AWS infrastructure), React and Typescript. AI and prompt engineering are used to generate cover letters and resume advice for users.",
     critical: true,
-    },
+  },
   {
     slug: "expressioneditor",
     title: "Expression Editor (AWS Honeycode)",
